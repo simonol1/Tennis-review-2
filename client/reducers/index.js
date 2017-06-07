@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux'
 
-import greetings from './greetings' 
+import vibes from './vibes' 
 
 export default combineReducers({
-  greetings
+  vibes
 })
