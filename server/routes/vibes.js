@@ -11,4 +11,12 @@ router.get('/', (req, res) => {
     })
 })
 
+router.post('/', (req, res) => {
+  let db = req.app.get('db')
+  vibesDb.addVibe(db)
+    .then(vibes => {
+      res.json(vibes)
+    })
+})
+
 module.exports = router

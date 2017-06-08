@@ -12075,10 +12075,97 @@ exports['default'] = thunk;
 
 /***/ }),
 /* 112 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-throw new Error("Module build failed: SyntaxError: Unexpected token, expected { (9:0)\n\n\u001b[0m \u001b[90m  7 | \u001b[39monChangeHandler()\n \u001b[90m  8 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39monSubmitHandler()\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 | \u001b[39m\n \u001b[90m 11 | \u001b[39m\n \u001b[90m 12 | \u001b[39m  render () {\u001b[0m\n");
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _vibes = __webpack_require__(268);
+
+var _vibes2 = _interopRequireDefault(_vibes);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var AddVibeForm = function (_React$Component) {
+  _inherits(AddVibeForm, _React$Component);
+
+  function AddVibeForm(props) {
+    _classCallCheck(this, AddVibeForm);
+
+    var _this = _possibleConstructorReturn(this, (AddVibeForm.__proto__ || Object.getPrototypeOf(AddVibeForm)).call(this, props));
+
+    _this.state = {
+      AddVibeForm: {}
+    };
+    return _this;
+  }
+
+  _createClass(AddVibeForm, [{
+    key: 'handleChange',
+    value: function handleChange(e) {
+      e.preventDefault();
+      this.props.dispatch((0, _vibes2.default)(this.state.AddVibeForm));
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      var vibe = [].concat(_toConsumableArray(this.state.vibe));
+      vibe[evt.target.name] = evt.target.value;
+      this.setState({ AddVibeForm: null });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'form' },
+        _react2.default.createElement(
+          'form',
+          null,
+          _react2.default.createElement('input', { type: 'text', name: 'id', placeholder: 'id', onChange: function onChange(e) {
+              return _this2.handleChange(e);
+            } }),
+          _react2.default.createElement('input', { type: 'image', id: 'image', name: 'image', placeholder: 'image', onChange: function onChange(e) {
+              return _this2.handleChange(e);
+            } }),
+          _react2.default.createElement('input', { type: 'text', name: 'quote', placeholder: 'quote', onChange: function onChange(e) {
+              return _this2.handleChange(e);
+            } }),
+          _react2.default.createElement('input', { type: 'text', name: 'author', placeholder: 'author', onChange: function onChange(e) {
+              return _this2.handleChange(e);
+            } }),
+          _react2.default.createElement('input', { type: 'submit', id: 'submit', value: 'Submit', onSubmit: function onSubmit(e) {
+              return _this2.handleSubmit(e);
+            } })
+        )
+      );
+    }
+  }]);
+
+  return AddVibeForm;
+}(_react2.default.Component);
+
+exports.default = AddVibeForm;
 
 /***/ }),
 /* 113 */
@@ -12100,11 +12187,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var Footer = function Footer() {
   return _react2.default.createElement(
     "div",
-    { className: "footer" },
+    { className: "footer1" },
     _react2.default.createElement(
       "h1",
       null,
-      "Hello"
+      "Spread the vibe"
     )
   );
 };
@@ -12201,6 +12288,7 @@ var Vibes = function Vibes(_ref) {
 };
 
 var mapStateToProps = function mapStateToProps(state) {
+  console.log(state);
   return {
     vibes: state.vibes
   };
@@ -12271,6 +12359,10 @@ function vibes() {
   switch (action.type) {
     case 'RECEIVE_VIBES':
       return [].concat(_toConsumableArray(action.vibes));
+
+    case 'ADD_VIBES':
+      return [].concat(_toConsumableArray(action.vibes));
+
     default:
       return state;
   }
@@ -27749,11 +27841,6 @@ module.exports = isObject;
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.getVibes = getVibes;
-
 var _superagent = __webpack_require__(270);
 
 var _superagent2 = _interopRequireDefault(_superagent);
@@ -27764,6 +27851,13 @@ var receiveVibes = function receiveVibes(vibes) {
   return {
     type: 'RECEIVE_VIBES',
     vibes: vibes
+  };
+};
+
+var addNewVibe = function addNewVibe(vibe) {
+  return {
+    type: 'ADD_VIBE',
+    vibe: vibe
   };
 };
 
@@ -27778,6 +27872,20 @@ function getVibes() {
     });
   };
 }
+
+function addVibe(vibe) {
+  return function (dispatch) {
+    _superagent2.default.post('/api/add').send(vibe).end(function (err, res) {
+      if (err) {
+        console.error(err.message);
+        return;
+      }
+      dispatch(addnewVibe(res.body));
+    });
+  };
+}
+
+module.exports = addVibe, getVibes;
 
 /***/ }),
 /* 269 */

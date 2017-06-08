@@ -7,7 +7,14 @@ const receiveVibes = (vibes) => {
   }
 }
 
-export function getVibes () {
+const addNewVibe = (vibe) => {
+  return {
+    type: 'ADD_VIBE',
+    vibe
+  }
+}
+
+function getVibes () {
   return (dispatch) => {
     request
       .get(`/api/vibes`)
@@ -20,3 +27,23 @@ export function getVibes () {
       })
   }
 }
+
+
+function addVibe (vibe) {
+  return (dispatch) => {
+    request
+      .post(`/api/add`)
+      .send(vibe)
+      .end((err, res) => {
+        if (err) {
+          console.error(err.message)
+          return
+        }
+        dispatch(addnewVibe(res.body))
+      })
+  }
+}
+
+module.exports =
+addVibe,
+getVibes

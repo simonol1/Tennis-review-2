@@ -20,6 +20,7 @@ const Vibes = ({vibes, dispatch}) => (
 )
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     vibes: state.vibes
   }

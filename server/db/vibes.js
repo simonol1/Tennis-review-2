@@ -3,6 +3,13 @@ const getVibes = (db) => {
     .select('*')
 }
 
+const addVibe = (vibe, db) => {
+  return db('vibes')
+    .insert(vibe)
+}
+
+
 module.exports = {
-  getVibes
+  getVibes,
+  addVibe
 }
