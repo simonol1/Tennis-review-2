@@ -3,6 +3,12 @@ import React from 'react'
 
 export default class AddVibeForm extends React.Component {
 
+
+onChangeHandler()
+
+onSubmitHandler()
+
+
   render () {
     return (
       <div className='form'>

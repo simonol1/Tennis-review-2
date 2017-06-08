@@ -12075,61 +12075,10 @@ exports['default'] = thunk;
 
 /***/ }),
 /* 112 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(5);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var AddVibeForm = function (_React$Component) {
-  _inherits(AddVibeForm, _React$Component);
-
-  function AddVibeForm() {
-    _classCallCheck(this, AddVibeForm);
-
-    return _possibleConstructorReturn(this, (AddVibeForm.__proto__ || Object.getPrototypeOf(AddVibeForm)).apply(this, arguments));
-  }
-
-  _createClass(AddVibeForm, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        { className: 'form' },
-        _react2.default.createElement(
-          'form',
-          null,
-          _react2.default.createElement('input', { type: 'text', name: 'id', placeholder: 'id' }),
-          _react2.default.createElement('input', { type: 'image', id: 'image', name: 'image', placeholder: 'image' }),
-          _react2.default.createElement('input', { type: 'text', name: 'quote', placeholder: 'quote' }),
-          _react2.default.createElement('input', { type: 'text', name: 'author', placeholder: 'author' }),
-          _react2.default.createElement('input', { type: 'submit', id: 'submit', value: 'Submit' })
-        )
-      );
-    }
-  }]);
-
-  return AddVibeForm;
-}(_react2.default.Component);
-
-exports.default = AddVibeForm;
+throw new Error("Module build failed: SyntaxError: Unexpected token, expected { (9:0)\n\n\u001b[0m \u001b[90m  7 | \u001b[39monChangeHandler()\n \u001b[90m  8 | \u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m  9 | \u001b[39monSubmitHandler()\n \u001b[90m    | \u001b[39m\u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 10 | \u001b[39m\n \u001b[90m 11 | \u001b[39m\n \u001b[90m 12 | \u001b[39m  render () {\u001b[0m\n");
 
 /***/ }),
 /* 113 */
