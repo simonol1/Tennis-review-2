@@ -1,37 +1,29 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
+import getVibes from '../actions/vibes'
 
-class VibeList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      vibes: props.vibes || []
-    }
-  }
-  componentWillReceiveProps(props) {
-    this.setState({vibes: props.vibes || []})
-  }
-  renderVibe(vibe) {
-    return <div>
-      <img src={vibe.img_url}/>
-      <h2>{vibe.quote}</h2>
-    </div>
-  }
-  render() {
-    return (
+
+const renderVibe = (vibe) => (
       <div>
-        {this.state.vibes.map((vibe) => this.renderVibe(vibe))}
+        <img src={vibe.image}/>
+        <p>{vibe.quote}</p>
+        <p>{vibe.author}</p>
       </div>
-    )
-  }
-}
+  )
+
+const Vibes = ({vibes, dispatch}) => (
+  <div>
+    <button onClick={() => dispatch(getVibes())}>Show Vibes</button>
+    {vibes.map(renderVibe)}
+  </div>
+)
 
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   return {
     vibes: state.vibes
   }
 }
 
-export default connect(mapStateToProps)(VibeList)
+export default connect(mapStateToProps)(Vibes)

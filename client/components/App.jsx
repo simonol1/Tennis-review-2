@@ -6,10 +6,10 @@ import AddVibeForm from './AddVibeForm'
 import VibeList from './VibeList'
 import Footer from './Footer'
 
-const App = ({history}) => (
+const App = () => (
   <div>
     <Header />
-      <Router history={history}>
+      <Router>
          <div>
            <Route exact path="/add" component={AddVibeForm} />
            <Route exact path="/" component={VibeList} />
