@@ -19,7 +19,6 @@ const Vibes = ({vibes, dispatch}) => (
   </div>
 )
 
-
 const mapStateToProps = (state) => {
   return {
     vibes: state.vibes
