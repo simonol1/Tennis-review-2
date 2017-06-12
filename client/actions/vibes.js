@@ -20,3 +20,25 @@ export function getVibes () {
       })
   }
 }
+
+const addNewVibe = (vibe) => {
+  return {
+    type: 'ADD_NEW_VIBE',
+    vibe
+  }
+}
+
+export function addVibe (vibe) {
+  return (dispatch) => {
+    request
+      .post(`/api/new_vibe`)
+      .send(vibe)
+      .end((err, res) => {
+        if (err) {
+          console.error(err.message)
+          return
+        }
+        dispatch(addNewVibe(res.body))
+      })
+  }
+}

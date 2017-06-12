@@ -11,7 +11,7 @@ const App = () => (
     <Header />
       <Router>
          <div>
-           <Route exact path="/add" component={AddVibeForm} />
+           <Route exact path="/" component={AddVibeForm} />
            <Route exact path="/" component={VibeList} />
         </div>
       </Router>

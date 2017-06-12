@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-import getVibes from '../actions/vibes'
+import {getVibes} from '../actions/vibes'
 
 
 const renderVibe = (vibe) => (

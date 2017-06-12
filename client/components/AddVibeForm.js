@@ -1,24 +1,44 @@
 import React from 'react'
+import { connect } from  'react-redux'
 
+import {addVibe} from '../actions/vibes'
 
-export default class AddVibeForm extends React.Component {
+class AddVibeForm extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      vibe: {}
+    }
+  }
 
+  onChangeHandler(e) {
+    let vibe = this.state.vibe
+    vibe[e.target.name] = e.target.value
+    this.setState({vibe})
+  }
 
-onChangeHandler()
-
-onSubmitHandler()
-
+  onSubmitHandler(e) {
+    e.preventDefault()
+    this.props.dispatch(addVibe(this.state.vibe))
+  }
 
   render () {
     return (
       <div className='form'>
-        <form>
-        <input type='text' name='id' placeholder='id' />
-          <input type='image' id='image' name='image' placeholder="image" />
-          <input type='text' name='quote' placeholder='quote' />
-          <input type='text' name='author' placeholder='author' />
+        <form onSubmit={(e) => this.onSubmitHandler(e)}>
+          <input type='text' name='quote' placeholder='quote' onChange={(e) => this.onChangeHandler(e)}/>
+          <input type='text' name='image' name='image' placeholder="image url" onChange={(e) => this.onChangeHandler(e)}/>
+          <input type='text' name='author' placeholder='author' onChange={(e) => this.onChangeHandler(e)}/>
           <input type='submit' id='submit' value='Submit' />
         </form>
       </div>
     )}
 }
+
+function mapStateToProps (state) {
+  return {
+    vibe:state.vibe
+  }
+}
+
+export default connect(mapStateToProps)(AddVibeForm)
