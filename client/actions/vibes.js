@@ -31,7 +31,7 @@ const addNewVibe = (vibe) => {
 export function addVibe (vibe) {
   return (dispatch) => {
     request
-      .post(`/api/new_vibe`)
+      .post(`/api/add`)
       .send(vibe)
       .end((err, res) => {
         if (err) {
