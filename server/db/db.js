@@ -1,4 +1,4 @@
-const getVibes = (db) => {
+function getVibes(db) {
   return db('vibes')
     .select('*')
 }

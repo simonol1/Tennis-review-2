@@ -17,19 +17,23 @@ test.cb('GET /', t => {
     })
 })
 
+const vibe = {
+  quote: 'Help me',
+  image: 'http://bit.ly/2tf3phC',
+  author: 'Simon'
+}
+
 test.cb('POST /', t => {
-  const vibe = {
-    quote: 'Help me',
-    image: 'http://bit.ly/2tf3phC',
-    author: 'Simon'
-  }
   request(t.context.app)
     .post('/api/vibes/add')
     .send({vibe})
     .expect(200)
     .end((err,res) => {
-      if (err) console.log(err);
-      t.is(res.body.length[3])
+      if (err) throw err
+      return t.context.db('vibes').select()
+      .then((result) => {
+      t.is(result.length, 4)
       t.end()
-    })
+      })
+   })
 })
