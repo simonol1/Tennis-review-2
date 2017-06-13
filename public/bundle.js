@@ -7524,7 +7524,7 @@ var addNewVibe = function addNewVibe(vibe) {
 
 function addVibe(vibe) {
   return function (dispatch) {
-    _superagent2.default.post('/api/add').send(vibe).end(function (err, res) {
+    _superagent2.default.post('/api/vibes/add').send({ vibe: vibe }).end(function (err, res) {
       if (err) {
         console.error(err.message);
         return;
@@ -12202,8 +12202,9 @@ var AddVibeForm = function (_React$Component) {
   }, {
     key: 'onSubmitHandler',
     value: function onSubmitHandler(e) {
-      e.preventDefault(e);
+      e.preventDefault();
       this.props.dispatch((0, _vibes.addVibe)(this.state.vibe));
+      window.location.reload();
     }
   }, {
     key: 'render',
@@ -12211,24 +12212,20 @@ var AddVibeForm = function (_React$Component) {
       var _this2 = this;
 
       return _react2.default.createElement(
-        'div',
-        { className: 'form' },
-        _react2.default.createElement(
-          'form',
-          { onSubmit: function onSubmit(e) {
-              return _this2.onSubmitHandler(e);
-            } },
-          _react2.default.createElement('input', { type: 'text', name: 'quote', placeholder: 'quote', onChange: function onChange(e) {
-              return _this2.onChangeHandler(e);
-            } }),
-          _react2.default.createElement('input', { type: 'text', name: 'image', placeholder: 'image url', onChange: function onChange(e) {
-              return _this2.onChangeHandler(e);
-            } }),
-          _react2.default.createElement('input', { type: 'text', name: 'author', placeholder: 'author', onChange: function onChange(e) {
-              return _this2.onChangeHandler(e);
-            } }),
-          _react2.default.createElement('input', { type: 'submit', id: 'submit', value: 'Submit' })
-        )
+        'form',
+        { className: 'form', onSubmit: function onSubmit(e) {
+            return _this2.onSubmitHandler(e);
+          } },
+        _react2.default.createElement('input', { type: 'text', id: 'quote', name: 'quote', placeholder: 'quote', onChange: function onChange(e) {
+            return _this2.onChangeHandler(e);
+          } }),
+        _react2.default.createElement('input', { type: 'text', id: 'image', name: 'image', placeholder: 'image url', onChange: function onChange(e) {
+            return _this2.onChangeHandler(e);
+          } }),
+        _react2.default.createElement('input', { type: 'text', name: 'author', placeholder: 'author', onChange: function onChange(e) {
+            return _this2.onChangeHandler(e);
+          } }),
+        _react2.default.createElement('input', { type: 'submit', id: 'submit', value: 'Submit' })
       );
     }
   }]);
@@ -12327,10 +12324,10 @@ var _vibes = __webpack_require__(65);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var renderVibe = function renderVibe(vibe) {
+var renderVibe = function renderVibe(vibe, i) {
   return _react2.default.createElement(
     'div',
-    null,
+    { key: i },
     _react2.default.createElement('img', { src: vibe.image }),
     _react2.default.createElement(
       'p',
@@ -12363,6 +12360,7 @@ var Vibes = function Vibes(_ref) {
 };
 
 var mapStateToProps = function mapStateToProps(state) {
+  console.log(state);
   return {
     vibes: state.vibes
   };
@@ -12435,7 +12433,7 @@ function vibes() {
       return [].concat(_toConsumableArray(action.vibes));
 
     case 'ADD_NEW_VIBE':
-      return [].concat(_toConsumableArray(action.vibe));
+      return [].concat(_toConsumableArray(state), [action.vibe]);
 
     default:
       return state;

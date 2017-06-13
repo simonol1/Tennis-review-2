@@ -4,8 +4,8 @@ import { connect } from 'react-redux'
 import {getVibes} from '../actions/vibes'
 
 
-const renderVibe = (vibe) => (
-      <div>
+const renderVibe = (vibe, i) => (
+      <div key={i}>
         <img src={vibe.image}/>
         <p>{vibe.quote}</p>
         <p>{vibe.author}</p>
@@ -20,6 +20,7 @@ const Vibes = ({vibes, dispatch}) => (
 )
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     vibes: state.vibes
   }

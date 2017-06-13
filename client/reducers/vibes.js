@@ -5,7 +5,7 @@ function vibes (state = [], action) {
       return [...action.vibes]
 
     case 'ADD_NEW_VIBE':
-      return [...action.vibe]
+      return [...state, action.vibe]
 
     default:
       return state

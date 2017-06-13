@@ -7,13 +7,33 @@ body {
   height: 100px;
   background-color: grey;
 }
+
+h1 {
+  padding-top: 25px;
+}
+
 .footer {
   text-align: center;
   background-color: grey;
-  height: 50px;
+  height: 100px;
 }
-#image {
+img {
   display: block;
-  margin-left: auto;
+  height: 200px;
+  width: auto;
+}
+
+.form {
+  width: 300px;
   margin-right: auto;
+  margin-left: auto;
+  margin-top: 50px;
+}
+
+#image {
+  width: 600px;
+}
+
+#quote {
+  width: 600px;
 }

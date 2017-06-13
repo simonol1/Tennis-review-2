@@ -1,7 +1,7 @@
 var express = require('express')
 var router = express.Router()
 
-var vibesDb = require('../db/vibes')
+var vibesDb = require('../db/db')
 
 router.get('/', (req, res) => {
   let db = req.app.get('db')
@@ -13,9 +13,16 @@ router.get('/', (req, res) => {
 
 router.post('/add', (req,res) => {
   let db = req.app.get('db')
-  vibesDB.addVibe(db)
-   .then(vibe => {
-     res.json(vibe)
+  vibesDb.addVibe(db,req.body.vibe)
+   .then(id => {
+     vibesDb.getVibeById(db, id[0])
+      .then(vibe => {
+        res.json(vibe)
+      })
+   })
+   .catch(err => {
+     console.log(err);
+     res.sendStatus(500)
    })
 })
 
