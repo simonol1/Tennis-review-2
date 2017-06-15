@@ -21,7 +21,6 @@ test.cb('api.addVibe', t => {
   .reply(200, {message: 'addVibe working'})
 
   addVibe()((actual) => {
-    console.log(actual);
     scope.done()
     t.is(actual.vibe.message, 'addVibe working')
     t.end()
