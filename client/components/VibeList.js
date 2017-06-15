@@ -14,7 +14,7 @@ const renderVibe = (vibe, i) => (
 
 const Vibes = ({vibes, dispatch}) => (
   <div>
-    <button onClick={() => dispatch(getVibes())}>Show Vibes</button>
+    <button id='showbutton' onClick={() => dispatch(getVibes())}>Show Vibes</button>
     {vibes.map(renderVibe)}
   </div>
 )
