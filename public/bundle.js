@@ -12326,7 +12326,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var App = function App() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'app-container' },
     _react2.default.createElement(_Header2.default, null),
     _react2.default.createElement(
       _reactRouterDom.HashRouter,
@@ -12607,7 +12607,7 @@ var Vibes = function Vibes(_ref) {
     null,
     _react2.default.createElement(
       'button',
-      { onClick: function onClick() {
+      { id: 'showbutton', onClick: function onClick() {
           return dispatch((0, _vibes.getVibes)());
         } },
       'Show Vibes'

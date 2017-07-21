@@ -7,7 +7,7 @@ import VibeList from './VibeList'
 import Footer from './Footer'
 
 const App = () => (
-  <div>
+  <div className='app-container'>
     <Header />
       <Router>
          <div>

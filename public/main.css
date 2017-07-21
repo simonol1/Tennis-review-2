@@ -1,5 +1,10 @@
 body {
   background-color: LightGrey;
+
+}
+
+.app-container {
+  height: 100%;
 }
 
 .header {
@@ -42,4 +47,10 @@ img {
 
 #quote {
   width: 600px;
+}
+
+#showbutton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
