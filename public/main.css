@@ -3,12 +3,18 @@ body {
 }
 
 .header {
-  text-align: center;
+  text-align: left;
   height: 100px;
   background-color: grey;
 }
 
 h1 {
+  padding-top: 25px;
+  padding-left: 20px;
+  font-weight: bolder;
+}
+
+h5 {
   padding-top: 25px;
 }
 
